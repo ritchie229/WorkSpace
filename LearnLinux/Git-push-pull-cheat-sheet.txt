@@ -1,2 +1,9 @@
+https://selectel.ru/blog/tutorials/what-is-git-push-and-how-to-use-it/
+
 git clone git@github.com:ritchie229/WorkSpace.git
-git add LearnLinux git@github.com:ritchie229/WorkSpace.git
+git init
+git remote add LearnLinux git@github.com:ritchie229/WorkSpace.git
+git config --global user.email "rishat.mukhtarov@gmail.com"
+git config --global user.name "ritchie229"
+git commit -m "Some points on Linux Learning"
+git push
