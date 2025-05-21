@@ -8,7 +8,7 @@ FROM ubuntu:16.04
 RUN apt-get -y update
 RUN apt-get -y install apache2
 
-RUN echo 'Hey all, APACHE running, ubuntu container running, gonna be all right' >> /var/www/html/index.html
+RUN echo 'Hey all, APACHE running, ubuntu container running, gonna be all right' > /var/www/html/index.html
 RUN cat /var/www/html/index.html
 
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
