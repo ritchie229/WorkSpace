@@ -1,11 +1,17 @@
 # ----------------------------------
 # Dockerfile building a Docker image
-# with a NGINX and wbcontent in it--
+# with a APACHE and wbcontent in it--
 # ----------------------------------
 # ----By Rishat Mukhtarov-----------
-FROM nginx:latest
+FROM ubuntu:latest
 
-COPY ./index.html /usr/share/nginx/html
-COPY ./*.JPG /usr/share/nginx/html
+RUN apt-get -y update
+RUN apt-get -y install apache2
+
+RUN echo "Hey all, APACHE running, ubuntu container running, gonna be all right" >> /var/www/html/index.html
+
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+#COPY ./index.html /usr/share/nginx/html
+#COPY ./*.JPG /usr/share/nginx/html
 
 EXPOSE 80
