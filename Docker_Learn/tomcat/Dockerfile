@@ -13,6 +13,9 @@ RUN apt-get -y install apache2
 RUN apt-get -y install nmap
 RUN apt-get -y install mc
 
+RUN apt-get -y install openssh-server
+RUN systemctl enable ssh
+
 
 # RUN echo 'Hey all, APACHE running, ubuntu container running, gonna be all right' > /var/www/html/index.html
 # RUN cat /var/www/html/index.html
