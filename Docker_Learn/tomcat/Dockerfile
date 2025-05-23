@@ -5,7 +5,7 @@
 # ----By Rishat Mukhtarov-----------
 FROM ubuntu:latest
 
-LABEL Learning_Network
+LABEL author=Rishat_Mukhtarov
 
 RUN apt-get -y update
 RUN apt-get -y install apache2
