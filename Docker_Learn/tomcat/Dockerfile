@@ -26,6 +26,7 @@ COPY ./*.JPG /var/www/html
 # COPY ./*.JPG /usr/share/nginx/html
 
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+CMD ["/etc/systemd/system/sshd.service", "start"]
 
 EXPOSE 80
 EXPOSE 22
