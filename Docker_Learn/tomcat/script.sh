@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/sbin/apache2ctl -DFOREGROUND && sleep 10 && service ssh start
+service ssh start && sleep 10 && /usr/sbin/apache2ctl -DFOREGROUND
