@@ -22,7 +22,7 @@ RUN apt-get -y install openssh-server
 
 COPY ./index.html /var/www/html
 COPY ./*.JPG /var/www/html
-COPY ./scrypt.sh /app/script.sh
+COPY ./script.sh /app/script.sh
 RUN chmod +x /app/script.sh
 
 # COPY ./index.html /usr/share/nginx/html
