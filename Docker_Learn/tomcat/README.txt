@@ -6,7 +6,7 @@ You can eather pull an image from the hub and run it or you can run it diretly, 
 # docker rmi - to delete a specific image. Note, If there is a container created upun the base of the image, you should firt stop the container and remove it. 
 
 
-# docker build -t <new_image_name:tag> - builds a new image on the basis of a sample image from dockerhub and the custom requirements described in the Dockerfile (should be in the same dir where PWD).
+# docker build -t <new_image_name:tag> . - builds a new image on the basis of a sample image from dockerhub and the custom requirements described in the Dockerfile (should be in the same dir where PWD).
 
 # docker run <options> <image_name:tag> - creates a container. Keys:
     -it (interactive)/-d (daemon), 
