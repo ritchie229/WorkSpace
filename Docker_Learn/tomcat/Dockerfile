@@ -3,7 +3,7 @@
 # with a APACHE and wbcontent in it--
 # ----------------------------------
 # ----By Rishat Mukhtarov-----------
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 LABEL author=Rishat_Mukhtarov
 
