@@ -22,11 +22,13 @@ RUN apt-get -y install openssh-server
 
 COPY ./index.html /var/www/html
 COPY ./*.JPG /var/www/html
-COPY ./scrypt.sh /usr/scrypt.sh
+COPY ./scrypt.sh /app/scrypt.sh
+RUN chmod +x /app/scrypt.sh
+
 # COPY ./index.html /usr/share/nginx/html
 # COPY ./*.JPG /usr/share/nginx/html
 
-CMD ["/usr/scrypt.sh"]
+CMD ["/app/scrypt.sh"]
 #CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"; "/etc/systemd/system/sshd.service", "start"]
 
 
