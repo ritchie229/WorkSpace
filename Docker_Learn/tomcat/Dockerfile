@@ -17,7 +17,8 @@ RUN apt-get -y install vim
 
 RUN apt-get -y install openssh-server
 RUN sed -i '/\(^PermitRootLogin\).*/ s//\PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -i -e 's/# PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+RUN sed -i 's/^#\(.*PasswordAuthentication yes.*\)/\1/' /etc/ssh/sshd_config
+# RUN sed -i -e 's/# PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 RUN echo -e "1234qwerty\n1234qwerty | passwd root"
 
