@@ -14,7 +14,7 @@ RUN apt-get -y install nmap
 RUN apt-get -y install mc
 
 RUN apt-get -y install openssh-server
-RUN systemctl enable ssh
+#RUN systemctl enable ssh
 
 
 # RUN echo 'Hey all, APACHE running, ubuntu container running, gonna be all right' > /var/www/html/index.html
@@ -25,8 +25,8 @@ COPY ./*.JPG /var/www/html
 # COPY ./index.html /usr/share/nginx/html
 # COPY ./*.JPG /usr/share/nginx/html
 
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
-CMD service ssh start
+
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"; "service ssh start"]
 #CMD ["/etc/systemd/system/sshd.service", "start"]
 
 EXPOSE 80
