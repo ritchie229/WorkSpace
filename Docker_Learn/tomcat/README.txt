@@ -44,3 +44,26 @@ To push to your dockerhub repository:
 # docker login
 # docker tag <your_image_name> <your_dockerhub_username>/<your_repository_name>:<version> (eg. docker tag rishat:v2 ritchie229/ritchie_docker:tomcat_app)
 # docker push <your_dockerhub_username>/<your_repository_name>:<version> (eg. docker push ritchie229/ritchie_docker:tomcat_app)
+
+
+Here is a section devoted to Docker Networking
+
+# docker network ls - lists the docker networks
+# docker network create <NAME> - creates a network with a bridge drive
+# docker network create --drive (-d) host/bridge/none/ipvlan/macvlan/ <NAME> - creates a network with a host/bridge/none/ipvlan/macvlan drive
+# docker network inspect <NETWORK_id/NAME> - will show subnet and gw of the network, containers attached and the options applied like type, nat, name, mtu etc.
+# docker network create -d bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 MyNet192 - example
+# docket netwok rm <NETWORK_id/NAME> - to remove a network
+
+
+
+
+
+
+
+
+
+
+DockerFile
+
+Docker Compose
