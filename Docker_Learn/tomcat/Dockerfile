@@ -21,7 +21,7 @@ RUN sed -i 's/^#\(.*PasswordAuthentication yes.*\)/\1/' /etc/ssh/sshd_config
 # RUN sed -i -e 's/# PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 # RUN echo -e "1234qwerty\n1234qwerty" | passwd root
-RUN echo 'user:passwd' | chpasswd
+RUN echo 'root:1234qwerty' | chpasswd
 
 
 # RUN echo 'Hey all, APACHE running, ubuntu container running, gonna be all right' > /var/www/html/index.html
