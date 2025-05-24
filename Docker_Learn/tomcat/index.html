@@ -24,20 +24,18 @@ function Elastic()
 <br><br><br><br>
 <br><br><br><br>
 
-<font color="green">This Web Server's devoted for {{ owner }}!<br>
-<font color="green"><h2>This page is geberated by</h2>
+<font color="green">This Web Server's running on container {{ CONTAINER_NAME }}!<br>
+
 <font color="gold"><h1 ID="elastic" align="Center" >DOCKER</h1>
-<font color="yellow"><h3 align="Center"> Эта страница создана мною в рамках обучения Docker. При помощи Docker в автоматичном режиме на серверах устанавливается веб сервис Apache, который является движком сайтов, автоматично стартует и ставится на автозагрузку. Далее код этой страницы копируется на те же сервера. Результат вы видите в эту минуту.</h3>
-		<font color="yellow"><h3 align="Center"> С Уважением, Ришат Мухтаров </h3>
-                <font color="orange"><h4 align="Center"> Hereby you can see a test webpage created by me - Rishat Mukhtarov - using JS language, and Apache web server service running it all along. All th code is delivered using Ansible onto three servers all differen from each other. Bye! </h4>
+<font color="orange"><h4 align="Center"> Hereby you can see a test webpage created by me - Rishat Mukhtarov - using JS language, and Apache web server service running on Docker containers. Bye! </h4>
 
 			<img src="AORS9875.JPG" width = 400 height = 240><img src="ASYT4311.JPG" width = 400 height = 240><br>
 			<img src="DSC09872.JPG" width = 400 height = 240><img src="FTDB5653.JPG" width = 400 height = 240><br>
                 <br>
-		Server Hostname - {{ ansible_hostname }}<br>
-		Server OS Family - {{ ansible_os_family }}<br>
-		IP address of this server is - {{ ansible_default_ipv4.address }}<br>
-		Tech Lead is {{ mainowner }}<br>
+		Server Hostname - {{ serser_hostname }}<br>
+		Server OS Family - {{ os_family }}<br>
+		IP address of this server is - {{ ipv4_address }}<br>
+		Tech Lead is {{ main_owner }}<br>
 
 </body>
 </html>
