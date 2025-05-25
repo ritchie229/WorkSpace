@@ -19,9 +19,8 @@ function Elastic()
 </script>
 
 
-<body bgcolor="blue" onLoad=Elastic()>
+<body bgcolor="black" onLoad=Elastic()>
 <center>
-<br><br><br><br>
 <br><br><br><br>
 
 <font color="green">This Web Server is running on container %CONTAINER_NAME% !<br>
@@ -33,9 +32,9 @@ function Elastic()
 			<img src="DSC09872.JPG" width = 400 height = 240><img src="FTDB5653.JPG" width = 400 height = 240><br>
                 <br>
 		Container Hostname - %container_hostname%<br>
-		Server OS Family - {{ os_family }}<br>
 		IP address of this server is - %ipv4_address%<br>
-		Tech Lead is {{ main_owner }}<br>
+		Container OS  - %OS%<br>
+		Tech Lead is %main_owner%<br>
 
 </body>
 </html>

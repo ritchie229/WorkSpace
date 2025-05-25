@@ -6,6 +6,7 @@
 FROM ubuntu:16.04
 
 LABEL author=Rishat_Mukhtarov
+ENV OWNER=Rishat_Mukhtarov
 
 RUN apt-get -y update
 RUN apt-get -y install apache2
@@ -32,7 +33,7 @@ COPY ./*.JPG /var/www/html
 COPY ./script.sh /app/script.sh
 RUN chmod +x /app/script.sh
 
-RUN export ipv4_address=$(echo | hostname -i)
+# RUN export ipv4_address=$(echo | hostname -i)
 # COPY ./index.html /usr/share/nginx/html
 # COPY ./*.JPG /usr/share/nginx/html
 
