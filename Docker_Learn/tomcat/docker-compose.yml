@@ -35,9 +35,9 @@ services:
 
 networks:
   default:
-    name: bridge
+    - name: bridge
     external: true
     #driver: bridge
-    name: MACVLAN_0
+    - name: MACVLAN_0
     external: true
     #driver: macvlan
