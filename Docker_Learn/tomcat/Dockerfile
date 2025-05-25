@@ -32,6 +32,7 @@ COPY ./*.JPG /var/www/html
 COPY ./script.sh /app/script.sh
 RUN chmod +x /app/script.sh
 
+RUN export ipv4_address=$(echo | hostname -i)
 # COPY ./index.html /usr/share/nginx/html
 # COPY ./*.JPG /usr/share/nginx/html
 
@@ -44,7 +45,7 @@ CMD ["/app/script.sh"]
 #ENV MYSQL_ROOT_PASSWORD=sql_root_secret
 
 #ENV IMAGE_NAME=iamge_name
-RUN echo '<font color="green">This Web Server is running on image '$IMAGE_NAME' !<br>' >> /var/www/html/index.html
+#RUN echo '<font color="green">This Web Server is running on image '$IMAGE_NAME' !<br>' >> /var/www/html/index.html
 
 
 EXPOSE 80
