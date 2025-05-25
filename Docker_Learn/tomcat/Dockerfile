@@ -42,7 +42,8 @@ CMD ["/app/script.sh"]
 
 #ENV CONTAINER_NAME=container_name / RUN export CONTAINER_NAME='container_name'
 #ENV MYSQL_ROOT_PASSWORD=sql_root_secret
-ENV IMAGE_NAME=iamge_name
+
+#ENV IMAGE_NAME=iamge_name
 RUN echo '<font color="green">This Web Server is running on image '$IMAGE_NAME' !<br>' >> /var/www/html/index.html
 
 
