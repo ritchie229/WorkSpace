@@ -32,10 +32,10 @@ services:
       - bridge
       - MACVLAN_0
 
-#networks:
-#  internet:
-#    name: internet
-#    driver: bridge
-#  localnet:
-#    name: localnet
-#    driver: bridge
+networks:
+  bridge:
+    name: bridge
+    driver: bridge
+  localnet:
+    name: MACVLAN_0
+    driver: macvlan
