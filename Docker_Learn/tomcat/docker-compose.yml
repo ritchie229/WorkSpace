@@ -15,7 +15,7 @@ services:
       - net_container_11
     networks:
       - bridge
-      - localnet
+      - MACVLAN_0
     
 
 
@@ -31,14 +31,14 @@ services:
       - 'OWNER=Leysanchik'
     networks:
       - bridge
-      - localnet
+      - MACVLAN_0
 
-networks:
-  bridge:
-    name: bridge
-    external: true
-    driver: bridge
-  localnet:
-    name: MACVLAN_0
-    external: true
-    driver: macvlan
+#networks:
+#  bridge:
+#    name: bridge
+#    external: true
+#    driver: bridge
+#  MACVLAN_0:
+#    name: MACVLAN_0
+#    external: true
+#    driver: macvlan
