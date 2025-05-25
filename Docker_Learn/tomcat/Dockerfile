@@ -37,7 +37,13 @@ RUN chmod +x /app/script.sh
 
 CMD ["/app/script.sh"]
 #CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"; "/etc/systemd/system/sshd.service", "start"]
+#CMD ["nginx","-g","daemon off;"]
+#CMD ["apache2ctl", "-D","FOREGROUND"]
 
+#ENV CONTAINER_NAME=container_name / RUN export CONTAINER_NAME='container_name'
+#ENV MYSQL_ROOT_PASSWORD=sql_root_secret
+ENV CONTAINER_NAME=container_name
+RUN echo '<font color="green">This Web Server's running on container $CONTAINER_NAME !<br>' >> /var/www/html/index.html
 
 EXPOSE 80
 EXPOSE 22

@@ -1,6 +1,6 @@
 To pull an image from dockerhub # docker pull <image_name> (eg. # docker pull nginx).
 To search for a specific image in dockerhub # docker search <image_name> (eg. # docker search tomcat).
-You can eather pull an image from the hub and run it or you can run it diretly, it will automatically pull it, then creat a container.
+You can eather pull an image from the hub and run it or you can run it diretly, it will automatically pull it, then create a container.
 
 # docker images - show the images you have locally.
 # docker rmi - to delete a specific image. Note, If there is a container created upun the base of the image, you should firt stop the container and remove it. 
@@ -25,7 +25,7 @@ You can eather pull an image from the hub and run it or you can run it diretly, 
 # docker volume rm <volume_name>
 
 
-    sleep 900 (delays stpo time to 15 minutes).
+    sleep 900 (delays stop time to 15 minutes).
 
 # docker ps - shows the running containers (option -a shows all existing containers).
 # docker stop/start/pause/unpause <container/id> - stops/starts/pauses/unpauses the existing container.
@@ -54,14 +54,13 @@ Here is a section devoted to Docker Networking
 # docker network inspect <NETWORK_id/NAME> - will show subnet and gw of the network, containers attached and the options applied like type, nat, name, mtu etc.
 # docker network create -d bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 MyNet192 - example
 # docket netwok rm <NETWORK_id/NAME> - to remove a network
+# docket netwok connect <NETWORK_id/NAME> <container_id> - adding the container to another network
+# docket netwok disconnect <NETWORK_id/NAME> <container_id> - disconnects container from any network
 
-
-
-
-
-
-
-
+examples:
+# docker network create -d macvlanc--subnet 192.168.0.0/24 --gateway 192.168.0.2 --ip-range 192.168.0.200/30 MACVLAN_0
+# docker network  connect MACVLAN_0 net_container_01
+# docker run -d --name net_container_03 --ip 192.168.0.202 --net MACVLAN_0 -p 83:80 net_containers
 
 
 DockerFile
