@@ -33,12 +33,11 @@ services:
       - bridge
       - MACVLAN_0
 
-#networks:
-#  bridge:
-#    name: bridge
-#    external: true
-#    driver: bridge
-#  MACVLAN_0:
-#    name: MACVLAN_0
-#    external: true
-#    driver: macvlan
+networks:
+  default:
+    name: bridge
+    external: true
+    #driver: bridge
+    name: MACVLAN_0
+    external: true
+    #driver: macvlan
