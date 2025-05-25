@@ -4,7 +4,7 @@
 # ----------------------------------
 # ----By Rishat Mukhtarov-----------
 FROM php:7.2-apache
-COPY ./index.html /var/www/html
+COPY ./index.php /var/www/html
 
 
 LABEL author=Rishat_Mukhtarov
