@@ -62,7 +62,9 @@ examples:
 # docker network  connect MACVLAN_0 net_container_01
 # docker run -d --name net_container_03 --ip 192.168.0.202 --net MACVLAN_0 -p 83:80 net_containers
 
-
+# docker run -d --rm --name net_container_05 -e CONTAINER_NAME=net_container_05 -e OWNER=Leysanchik! -p 85:80 ritchie229/ritchie_docker:net_containers
 DockerFile
+
+
 
 Docker Compose
