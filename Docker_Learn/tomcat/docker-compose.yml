@@ -34,10 +34,11 @@ services:
       - localnet
 
 networks:
-  external: true
   bridge:
     name: bridge
+    external: true
     driver: bridge
   localnet:
     name: MACVLAN_0
+    external: true
     driver: macvlan
