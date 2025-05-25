@@ -14,8 +14,7 @@ services:
     depends_on:
       - net_container_11
     networks:
-      - bridge
-      - MACVLAN_0
+      - HomeBridge
     
 
 
@@ -34,10 +33,6 @@ services:
       - MACVLAN_0
 
 networks:
-  default:
-    - name: bridge
-      external: true
-    #driver: bridge
-    - name: MACVLAN_0
-      external: true
-    #driver: macvlan
+  HomeBridge:
+    external: true
+    name: bridge
