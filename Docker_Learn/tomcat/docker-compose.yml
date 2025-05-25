@@ -29,9 +29,8 @@ services:
     environment:
       - 'OWNER=Leysanchik'
     networks:
-      - bridge
-      - MACVLAN_0
-
+      - HomeBridge
+  
 networks:
   HomeBridge:
     external: true
