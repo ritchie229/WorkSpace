@@ -16,6 +16,7 @@ services:
     networks:
       - bridge
       - localnet
+    
 
 
   net_container_11:
@@ -33,6 +34,7 @@ services:
       - localnet
 
 networks:
+  external: true
   bridge:
     name: bridge
     driver: bridge
