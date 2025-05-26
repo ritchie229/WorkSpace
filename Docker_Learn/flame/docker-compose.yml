@@ -2,7 +2,7 @@
 
 version: '2.1'
 volumes:
-  - flame
+  flame:
 services:
   flame:
     image: pawelmalak/flame:latest
