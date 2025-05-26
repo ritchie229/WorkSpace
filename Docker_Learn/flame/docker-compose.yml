@@ -1,0 +1,17 @@
+# docker run -p 5005:5005 -v /path/to/data:/app/data -e PASSWORD=flame_password pawelmalak/flame
+
+version: '2.1'
+volumes:
+  - flame
+services:
+  flame:
+    image: pawelmalak/flame:latest
+    container_name: flame
+    volumes:
+      - flame:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration feature
+    ports:
+      - 5005:5005
+    environment:
+      - PASSWORD=flame
+    restart: unless-stopped
