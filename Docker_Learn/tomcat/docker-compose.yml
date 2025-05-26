@@ -32,6 +32,6 @@ services:
       - HomeBridge
   
 networks:
-  HomeBridge:
-    external: true
-    name: bridge
+  bridge:
+    external:
+      name: HomeBridge
