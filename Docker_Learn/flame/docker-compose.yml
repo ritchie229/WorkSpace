@@ -4,6 +4,19 @@ version: '2.1'
 volumes:
   flame:
 services:
+  heimdall:
+    image: lscr.io/linuxserver/heimdall:latest
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - flame:/config
+    ports:
+      - 60:80
+      - 443:443
+    restart: unless-stopped
   flame:
     image: pawelmalak/flame:latest
     container_name: flame
