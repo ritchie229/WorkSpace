@@ -9,7 +9,7 @@ services:
     container_name: app
     ports:
       - "80:80"
-    restart: unless_stopped
+    restart: unless-stopped
     depends_on:
       - app-db
       - app-redis
@@ -20,7 +20,7 @@ services:
   app-db:
     image: postgres
     container_name: app-postgres
-    restart: unless_stopped
+    restart: unless-stopped
     environment: 
       - 'POSTGRES_PASSWORD=pass@'
     networks:
@@ -29,7 +29,7 @@ services:
   app-redis:
     image: redis
     container_name: app-redis
-    restart: unless_stopped
+    restart: unless-stopped
     networks:
       - localnet
 
