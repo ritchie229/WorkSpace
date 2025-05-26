@@ -2,7 +2,7 @@
 # docker run --name app-postgres -e POSTGRES_PASSWORD=pass@ --net appnet postgress
 # docker run --name app-redis --net appnet redis
 
-version '3.6'
+version: '3.6'
 services:
   php-app:
     image: php:apache
