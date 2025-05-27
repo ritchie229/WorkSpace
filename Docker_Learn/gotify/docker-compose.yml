@@ -1,0 +1,16 @@
+### A Composition for Notify
+
+version: "3"
+volumes:
+  gotify_data:
+  
+services:
+  gotify: # custom name
+    image: gotify/server
+    ports:
+      - 8080:80
+    environment:
+      - TZ=Europe/Moscow
+      - GOTIFY_DEFAULUSER_PASS=229richy@
+    volumes:
+      - gotify_data:/app/data"
