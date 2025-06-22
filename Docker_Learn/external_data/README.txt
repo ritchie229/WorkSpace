@@ -8,12 +8,6 @@ You can eather pull an image from the hub and run it or you can run it diretly, 
 
 # docker build -t <new_image_name:tag> . - builds a new image on the basis of a sample image from dockerhub and the custom requirements described in the Dockerfile (should be in the same dir where PWD).
 
-eg.with build from CLI
-# docker build -t my-ubuntu -<<EOF
-FROM ubuntu:22.04
-RUN apt update && apt install iputils-ping --yes
-EOF
-
 # docker run <options> <image_name:tag> - creates a container. Keys:
     -it (interactive)/-d (daemon), 
     -p 1234:8080 (forwards 8080 to 0.0.0.0 port 1234/tcp), 
@@ -26,34 +20,10 @@ EOF
         docker run -p 80:80 -v <volume_name>:/usr/share/nginx/html -d nginx (it itself creates a place for data on the server at /var/lib/docker/<volume_name>
         Note, the path for the MacOS is the same, but it is not on the host FS, but inside the Docker VM. The best way to access the volumes here is to use VSCode Docker extention installed. Click on Docker icon, go to VOLUMES section, find your volume you want to modify, right-click on it and choose Explore in a Dev Container. In the new VSCode window you will see the contents ov the volume, and you can just use Drag-n-Drop or edit options.
         Also you can run the following to enter into Docker VM and modify: "# docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh"
-    --mount
 # docker volume ls - lists volumes
 # docker volume create <volume_name>
 # docker volume rm <volume_name>
---------------
-eg.with mounting volume
-# docker volume create <volume_name>
-# docker run --mount source=<volume_name>,destination=</destination_path/> ubuntu:22.04
-# dcoker run -it --rm --mount type=bind,source="${PWD}"/my-data,destination=/my-data ubuntu:22.04
---------------
-eg.
-docker run --name my_python --mount type=bind,source="${PWD}"/codes,destination=/root/codes -d -it python:3.11.1
-docker run --name my_python -v "${PWD}":/root/codes -d -it python:3.11.1
-docker commit ea13cdab186f ritchie229/ritchie_docker:my_python
-docker run --name my_python -d -it ritchie229/ritchie_docker:my_python
-docker exec -it my_python /bin/bash
-The mounting will not happen!!!
---------------
-eg.
-docker build -t ritchie229/ritchie_docker:my-python -<<EOF
-FROM python:3.11.1
-WORKDIR /root/codes
-COPY . .
-EOF
-docker run --name my_python -d -it ritchie229/ritchie_docker:my-python
-docker exec -it my_python /bin/bash
-docker stop my_python && docker rm my_python
--------------
+
 
     sleep 900 (delays stop time to 15 minutes).
 
@@ -86,12 +56,12 @@ Here is a section devoted to Docker Networking
 # docket netwok rm <NETWORK_id/NAME> - to remove a network
 # docket netwok connect <NETWORK_id/NAME> <container_id> - adding the container to another network
 # docket netwok disconnect <NETWORK_id/NAME> <container_id> - disconnects container from any network
------------
+
 examples:
 # docker network create -d macvlanc--subnet 192.168.0.0/24 --gateway 192.168.0.2 --ip-range 192.168.0.200/30 MACVLAN_0
 # docker network  connect MACVLAN_0 net_container_01
 # docker run -d --name net_container_03 --ip 192.168.0.202 --net MACVLAN_0 -p 83:80 net_containers
-------------
+
 # docker run -d --rm --name net_container_05 -e CONTAINER_NAME=net_container_05 -e OWNER=Leysanchik! -p 85:80 ritchie229/ritchie_docker:net_containers
 DockerFile
 

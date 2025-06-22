@@ -1,0 +1,9 @@
+#cat <<EOT >> cat.txt
+#1st line
+#2nd line
+#3rd line
+#EOT
+
+1st line
+2nd line
+3rd line
