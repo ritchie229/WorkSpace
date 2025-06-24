@@ -30,7 +30,7 @@ EXPOSE 22
 ==================================================
 
 script.sh
-!/bin/bash
+#!/bin/bash
 first run ending commands like start a service, copy a file etc, at the end put a command starting a program
 export ipv4_address=$(echo | hostname -i)
 export OS=$(cat /etc/os-release | grep PRETTY_NAME | cut -d "=" -f2)
