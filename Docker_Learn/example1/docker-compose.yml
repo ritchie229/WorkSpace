@@ -1,0 +1,43 @@
+# docker run --name app -p80:80 --net appnet php:apache
+# docker run --name app-postgres -e POSTGRES_PASSWORD=pass@ --net appnet postgres
+# docker run --name app-redis --net appnet redis
+
+version: '3.6'
+services:
+  php-app:
+    image: php:apache
+    container_name: app
+    ports:
+      - "70:80"
+    restart: unless-stopped
+    depends_on:
+      - app-db
+      - app-redis
+    networks:
+      - internet
+      - localnet
+
+  app-db:
+    image: postgres
+    container_name: app-postgres
+    restart: unless-stopped
+    environment: 
+      - 'POSTGRES_PASSWORD=pass@'
+    networks:
+      - localnet
+
+  app-redis:
+    image: redis
+    container_name: app-redis
+    restart: unless-stopped
+    networks:
+      - localnet
+
+networks:
+  internet:
+    name: internet
+    driver: bridge
+  localnet:
+    name: localnet
+    driver: bridge
+

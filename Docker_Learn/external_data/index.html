@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Learning Dockerrrrrrr</title>
+
+<script language="JavaScript">
+var sizes = new Array (0,1,2,4,8,10,12);
+sizes.pos = 0;
+				
+function Elastic()
+{
+	var el = document.all.elastic
+	if (null == el.direction)el.direction = 1
+	else if ((sizes.pos > sizes.length - 2) || (0 == sizes.pos))
+	el.direction *= -1
+	el.style.letterSpacing = sizes[sizes.pos += el.direction]
+	setTimeout('Elastic()',100)
+}
+
+</script>
+
+
+<body bgcolor="black" onLoad=Elastic()>
+<center>
+<br><br><br><br>
+
+<font color="green">This Web Server is running on %CONTAINER_NAME% !<br>
+
+<font color="gold"><h1 ID="elastic" align="Center" >COME ON GUYS</h1>
+<font color="gold"><h1 ID="elastic" align="Center" >COME ON</h1>
+<font color="orange"><h4 align="Center"> Hereby you can see a test webpage created by me - Rishat_Mukhtarov  - using JS language, and Apache web server service running on Docker containers. Bye! </h4>
+
+			<img src="1.JPG" width = 400 height = 240><img src="3.JPG" width = 400 height = 240><br>
+			<img src="2.JPG" width = 400 height = 240><img src="4.JPG" width = 400 height = 240><br>
+                <br>
+		Container Hostname - %container_hostname%<br>
+		IP address of this server is - %ipv4_address%<br>
+		Container OS  - %OS%<br>
+		Tech Lead is %main_owner%<br>
+
+</body>
+</html>

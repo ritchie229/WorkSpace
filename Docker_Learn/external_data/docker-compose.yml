@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+  net_container_10:
+    image: ritchie229/ritchie_docker:net_containers
+    #build: .
+    container_name: net_container_10
+    ports:
+      - "8010:80"
+      - "2210:22"
+    restart: unless-stopped
+    environment:
+      - 'OWNER=Ritchie'
+    depends_on:
+      - net_container_11
+    networks:
+      - HomeBridge
+    
+
+
+  net_container_11:
+    image: ritchie229/ritchie_docker:net_containers
+    #build: .
+    container_name: net_container_11
+    ports:
+      - "8011:80"
+      - "2211:22"
+    restart: unless-stopped
+    environment:
+      - 'OWNER=Leysanchik'
+    networks:
+      - HomeBridge
+  
+networks:
+  HomeBridge:
+    external: true
+    name: HomeBridge
