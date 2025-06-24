@@ -5,8 +5,9 @@ https://github.com/ritchie229/WorkSpace/tree/main/Docker_Learn
 ritchie229/ritchie_docker:net_containers
 ghcr.io/ritchie229/net_containers:latest
 
-=====================================================
-
+=========
+DOCKERFILE
+=========
 FROM ubuntu:16.04
 LABEL author=Rishat_Mukhtarov
 ENV OWNER=Rishat_Mukhtarov
@@ -27,9 +28,9 @@ CMD ["/app/script.sh"]
 EXPOSE 80
 EXPOSE 22
 
-==================================================
-
+=========
 script.sh
+=========
 #!/bin/bash
 first run ending commands like start a service, copy a file etc, at the end put a command starting a program
 export ipv4_address=$(echo | hostname -i)
@@ -41,6 +42,51 @@ sed -i 's|%OS%|'"$OS"'|g' /var/www/html/index.html
 sed -i 's|%main_owner%|'"$OWNER"'|g' /var/www/html/index.html
 service ssh start && sleep 10 && /usr/sbin/apache2ctl -DFOREGROUND
 
-======================================================
-
+=========
+CLI
+=========
 docker run -d --rm --name net_container_05 -e CONTAINER_NAME=net_container_05 -e OWNER=Leysanchik! -p 85:80 ritchie229/ritchie_docker:net_containers
+
+=========
+Docker Compose YML
+=========
+version: '3.5'
+
+services:
+  net_container_10:
+    image: ritchie229/ritchie_docker:net_containers
+    #build: .
+    container_name: net_container_10
+    ports:
+      - "8010:80"
+      - "2210:22"
+    restart: unless-stopped
+    environment:
+      - 'OWNER=Ritchie'
+    depends_on:
+      - net_container_11
+    networks:
+      - HomeBridge
+    
+
+
+  net_container_11:
+    image: ritchie229/ritchie_docker:net_containers
+    #build: .
+    container_name: net_container_11
+    ports:
+      - "8011:80"
+      - "2211:22"
+    restart: unless-stopped
+    environment:
+      - 'OWNER=Leysanchik'
+    networks:
+      - HomeBridge
+  
+networks:
+  HomeBridge:
+    external: true
+    name: HomeBridge
+==========================================================
+                        THE END
+==========================================================
