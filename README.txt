@@ -2,8 +2,8 @@ https://github.com/ritchie229/WorkSpace/tree/main/Docker_Learn
 
 ======================================================
 
-ritchie229/ritchie_docker:net_containers
-ghcr.io/ritchie229/net_containers:latest
+docker pull ritchie229/ritchie_docker:net_containers
+docker pull ghcr.io/ritchie229/net_containers:latest
 
 =========
 DOCKERFILE
