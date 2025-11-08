@@ -11,6 +11,7 @@ services:
       - 8080:80
     environment:
       - TZ=Europe/Moscow
-      - GOTIFY_DEFAULTUSER_PASS=229richy@
+      - GOTIFY_DEFAULTUSER_PASS=22richman@
     volumes:
+
       - gotify_data:/app/data"
