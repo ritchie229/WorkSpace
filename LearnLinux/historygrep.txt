@@ -1,0 +1,3 @@
+ls -la | grep -rnw copy
+history | grep -rnw copy
+
